@@ -1,0 +1,115 @@
+<div id="users">
+  <div class="demo-section k-content">
+      <button class="k-button" ng-show="!win2visible" ng-click="win2.open()">Add employee</button>
+  </div>
+  <div kendo-window="win2" k-title="'Add new employee'"
+      k-width="600" k-height="400" k-visible="false"
+      k-on-open="win2visible = true" k-on-close="win2visible = false">
+      <ul id="fieldlist">
+          <li>
+              <h5>User Name:</h4>
+              <input class="k-input" ng-model="dataItem.username" />
+          </li>
+          <li>
+              <h5>First Name:</h4>
+              <input class="k-input" ng-model="dataItem.firstname" />
+          </li>
+          <li>
+              <h5>Last Name:</h4>
+              <input class="k-input" ng-model="dataItem.lastname" />
+          </li>
+          <li>
+              <h5>Hire Date:</h4>
+              <input kendo-date-picker
+                 ng-model="dataItem.hiredate"/>
+          </li>
+          <li>
+              <h5>Job:</h4>
+              <select kendo-drop-down-list ng-model="dataItem.job">
+                <option value="dev">dev</option>
+                <option value="pm">pm</option>
+                <option value="devops">devops</option>
+                <option value="qa">qa</option>
+              </select>
+          </li>
+          <li>
+            <button ng-click="users.addItem(dataItem)" class="k-button">Update</button>
+          </li>
+      </ul>
+      </div>
+  <div kendo-grid k-options="users.mainGridOptions">
+    <div k-detail-template>
+        <kendo-tabstrip>
+          <ul>
+              <li>Edit</li>
+              <li>Delete</li>
+          </ul>
+          <div>
+            <ul id="fieldlist">
+                <li>
+                    <h5 for="username">User Name:</h4>
+                    <input class="k-input" id="username" ng-model="dataItem.username" />
+                </li>
+                <li>
+                    <h5 for="firstname">First Name:</h4>
+                    <input class="k-input" id="firstname" ng-model="dataItem.firstname" />
+                </li>
+                <li>
+                    <h5 for="lastname">Last Name:</h4>
+                    <input class="k-input" id="lastname" ng-model="dataItem.lastname" />
+                </li>
+                <li>
+                    <h5 for="hiredate">Hire Date:</h4>
+                    <input id="hiredate" kendo-date-picker
+                       ng-model="dataItem.hiredate"/>
+                </li>
+                <li>
+                    <h5 for="job">Job:</h4>
+                    <select kendo-drop-down-list ng-model="dataItem.job">
+                      <option value="dev">dev</option>
+                      <option value="pm">pm</option>
+                      <option value="devops">devops</option>
+                      <option value="qa">qa</option>
+                    </select>
+
+                    <!-- <input id="lastname" ng-model="dataItem.lastname" /> -->
+                </li>
+                <li>
+                  <button ng-click="users.updateItem(dataItem)" class="k-button">Update</button>
+                </li>
+            </ul>
+          </div>
+          <div>
+            <button class="k-primary k-button" ng-click="users.deleteItem(dataItem.id)">Delete Employee</button>
+          </div>
+        </kendo-tabstrip>
+
+    </div>
+  </div>
+
+  <div kendo-grid k-options="users.fullInfoGridOptions">
+    <div k-detail-template>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

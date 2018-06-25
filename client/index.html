@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Users List</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/kendo/styles/kendo.common-material.min.css">
+    <link rel="stylesheet" href="/kendo/styles/kendo.material.min.css">
+    <link rel="stylesheet" href="/kendo/styles/kendo.material.mobile.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <!-- <header>
+      <div class="collapse bg-dark">
+        <div class="container">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>Users List</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+  </header> -->
+  <main role="main">
+        <div ng-view="">
+
+        </div>
+  </main>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/kendo/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+    <script type="text/javascript" src="/controllers/users.js"></script>
+    <script type="text/javascript" src="/config.js"></script>
+  </body>
+</html>

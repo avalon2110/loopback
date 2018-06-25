@@ -1,0 +1,29 @@
+{
+  "name": "employeeJobsHistory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userid": {
+      "type": "number"
+    },
+    "previousJobs": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "previousJobsTitles": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
